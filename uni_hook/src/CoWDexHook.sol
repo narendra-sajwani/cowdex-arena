@@ -12,7 +12,7 @@ import {BeforeSwapDelta, toBeforeSwapDelta, BeforeSwapDeltaLibrary} from "v4-cor
 import {BalanceDelta, BalanceDeltaLibrary} from "v4-core/types/BalanceDelta.sol";
 import {StateLibrary} from "v4-core/libraries/StateLibrary.sol";
 
-interface ICoWDexServiceManager {
+interface ICowDexServiceManager {
     function createNewTask(
         address sender,
         int256 amountSpecified,
@@ -74,7 +74,7 @@ contract CoWDexHook is BaseHook {
         returns (bytes4, BeforeSwapDelta, uint24)
     {
         // TODO
-        // no hook data just return
+        // no hook data, just return
         BeforeSwapDelta beforeSwapDelta;
         if (hookData.length == 0) {
             beforeSwapDelta = toBeforeSwapDelta(0, 0);
